@@ -23,7 +23,7 @@ const ContactForm = () => {
       const { name, email, subject, message } = values;
       try {
         const response = await fetch(
-          "http://localhost:3010/api/messages/createMessage",
+          "https://ascend-y4h7.onrender.com/api/messages/createMessage",
           {
             method: "POST",
             headers: {

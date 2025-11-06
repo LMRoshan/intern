@@ -25,7 +25,7 @@ const Product = () => {
     if (found) {
       setCurrentProduct(found);
     } else {
-      fetch(`http://localhost:3010/api/products/${id}`)
+      fetch(`https://ascend-y4h7.onrender.com/api/products/${id}`)
         .then((res) => res.json())
         .then((data) => setCurrentProduct(data))
         .catch((err) => console.error("Error fetching product:", err));
