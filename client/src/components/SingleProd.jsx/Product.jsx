@@ -106,7 +106,7 @@ const Product = () => {
                 key={idx}
                 src={
                   currentProduct.img && currentProduct.img.length > 0
-                    ? `http://localhost:3010/uploads/${currentProduct.img[0]}`
+                    ? `https://ascend-y4h7.onrender.com/uploads/${currentProduct.img[0]}`
                     : Pic
                 }
                 alt={`Thumbnail ${idx + 1}`}
@@ -119,7 +119,7 @@ const Product = () => {
             <img
               src={
                 currentProduct.img && currentProduct.img.length > 0
-                  ? `http://localhost:3010/uploads/${currentProduct.img[0]}`
+                  ? `https://ascend-y4h7.onrender.com/uploads/${currentProduct.img[0]}`
                   : Pic
               }
               alt={currentProduct.title}
