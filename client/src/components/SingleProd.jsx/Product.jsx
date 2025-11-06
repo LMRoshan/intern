@@ -25,7 +25,7 @@ const Product = () => {
     if (found) {
       setCurrentProduct(found);
     } else {
-      fetch(`https://ascend-y4h7.onrender.com/api/products/${id}`)
+      fetch(`https://intern-project-rxzq.onrender.com/api/products/${id}`)
         .then((res) => res.json())
         .then((data) => setCurrentProduct(data))
         .catch((err) => console.error("Error fetching product:", err));
@@ -106,7 +106,7 @@ const Product = () => {
                 key={idx}
                 src={
                   currentProduct.img && currentProduct.img.length > 0
-                    ? `https://ascend-y4h7.onrender.com/uploads/${currentProduct.img[0]}`
+                    ? `https://intern-project-rxzq.onrender.com/uploads/${currentProduct.img[0]}`
                     : Pic
                 }
                 alt={`Thumbnail ${idx + 1}`}
@@ -119,7 +119,7 @@ const Product = () => {
             <img
               src={
                 currentProduct.img && currentProduct.img.length > 0
-                  ? `https://ascend-y4h7.onrender.com/uploads/${currentProduct.img[0]}`
+                  ? `https://intern-project-rxzq.onrender.com/uploads/${currentProduct.img[0]}`
                   : Pic
               }
               alt={currentProduct.title}

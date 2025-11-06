@@ -25,7 +25,7 @@ const Products = () => {
                     className="w-full h-full object-cover"
                     src={
                       prod.img && prod.img.length > 0
-                        ? `https://ascend-y4h7.onrender.com/uploads/${prod.img[0]}`
+                        ? `https://intern-project-rxzq.onrender.com/uploads/${prod.img[0]}`
                         : Pic
                     }
                     alt={prod.title}

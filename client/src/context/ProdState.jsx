@@ -9,7 +9,7 @@ const ProdState = (props) => {
   const allProduct = async () => {
     try {
       const response = await fetch(
-        "https://ascend-y4h7.onrender.com/api/products/getProducts"
+        "https://intern-project-rxzq.onrender.com/api/products/getProducts"
       );
       const data = await response.json();
       if (data.success) setProducts(data.products);
@@ -30,7 +30,7 @@ const ProdState = (props) => {
 
     try {
       const response = await fetch(
-        `https://ascend-y4h7.onrender.com/api/products/updateProduct/${id}`,
+        `https://intern-project-rxzq.onrender.com/api/products/updateProduct/${id}`,
         {
           method: "PUT",
           headers: {
@@ -60,7 +60,7 @@ const ProdState = (props) => {
 
     try {
       const response = await fetch(
-        `https://ascend-y4h7.onrender.com/api/products/deleteProduct/${id}`,
+        `https://intern-project-rxzq.onrender.com/api/products/deleteProduct/${id}`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json", authToken },

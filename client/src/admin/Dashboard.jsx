@@ -18,7 +18,7 @@ const Dashboard = () => {
       }
 
       const response = await fetch(
-        "https://ascend-y4h7.onrender.com/api/messages/getMessages",
+        "https://intern-project-rxzq.onrender.com/api/messages/getMessages",
         {
           method: "GET",
           headers: {
@@ -47,7 +47,7 @@ const Dashboard = () => {
       }
 
       const response = await fetch(
-        `https://ascend-y4h7.onrender.com/api/messages/deleteMessage/${id}`,
+        `https://intern-project-rxzq.onrender.com/api/messages/deleteMessage/${id}`,
         {
           method: "DELETE",
           headers: {

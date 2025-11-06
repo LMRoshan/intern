@@ -23,7 +23,7 @@ const Forms = () => {
       const { identifier, password } = values;
 
       try {
-        const response = await fetch("https://ascend-y4h7.onrender.com/api/auth/login", {
+        const response = await fetch("https://intern-project-rxzq.onrender.com/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -59,7 +59,7 @@ const ProductAdmin = () => {
                   className="w-full h-64 object-cover"
                   src={
                     product.img && product.img.length > 0
-                      ? `https://ascend-y4h7.onrender.com/uploads/${product.img[0]}`
+                      ? `https://intern-project-rxzq.onrender.com/uploads/${product.img[0]}`
                       : Pic
                   }
                   // {`http://localhost:3010/uploads/${product.img[0]}`}

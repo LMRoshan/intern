@@ -55,7 +55,7 @@ const AddProduct = () => {
         }
 
           const response = await fetch(
-            "https://ascend-y4h7.onrender.com/api/products/createProduct",
+            "https://intern-project-rxzq.onrender.com/api/products/createProduct",
             {
               method: "POST",
               headers: { authToken: authToken },

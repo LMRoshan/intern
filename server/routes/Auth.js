@@ -51,12 +51,13 @@ router.post('/user',
     })
 
 
-router.post('/login',
-    body('username').isLength({ min: 5 }),
-    body('password').isLength({ min: 6 }), async (req, res) => {
+router.post(
+    "/login",
+    body("username").isLength({ min: 3 }),
+    body("password").isLength({ min: 6 }),
+    async (req, res) => {
         try {
-
-            const errors = validationResult(req)
+            const errors = validationResult(req);
             if (!errors.isEmpty()) {
                 return res.status(400).json({ errors: errors.array() });
             }
@@ -65,19 +66,21 @@ router.post('/login',
                 const data = {
                     user: {
                         id: "admin",
-                        role: "admin"
-                    }
-                }
+                        role: "admin",
+                    },
+                };
                 const authToken = jwt.sign(data, JWT_SECRET);
-                return res.status(200).json({ success: true, message: "Admin Login successful", role: "admin", user: "admin", authToken });
-
+                return res.status(200).json({
+                    success: true,
+                    message: "Admin Login successful",
+                    role: "admin",
+                    user: "admin",
+                    authToken,
+                });
             }
 
             const user = await User.findOne({
-                $or: [
-                    { username: req.body.username },
-                    { email: req.body.email }
-                ]
+                $or: [{ username: req.body.username }, { email: req.body.email }],
             });
 
             if (!user) {
@@ -91,17 +94,30 @@ router.post('/login',
 
             const data = {
                 user: {
-                    id: user._id
-                }
-            }
+                    id: user._id,
+                    role: user.role || "user",
+                },
+            };
 
             const authToken = jwt.sign(data, JWT_SECRET);
 
-            res.status(200).json({ success: true, message: "Login successful", user, authToken });
+            res.status(200).json({
+                success: true,
+                message: "Login successful",
+                role: user.role || "user",
+                user: user.username,
+                authToken,
+            });
         } catch (error) {
-            res.status(500).json({ success: false, message: "Internal server error", error });
+            res.status(500).json({
+                success: false,
+                message: "Internal server error",
+                error: error.message,
+            });
         }
-    })
+    }
+);
+
 
 
 export default router;
